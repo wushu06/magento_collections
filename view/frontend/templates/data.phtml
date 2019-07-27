@@ -1,0 +1,79 @@
+<h1>Visit showroom booking form</h1>
+<h2>Categories collection</h2>
+<?php
+$collection = $block->categoriesData('all');
+foreach ($collection->getData() as $category){
+    echo '<pre>';
+    var_dump($category);
+    echo '</pre>';
+}
+?>
+<hr>
+<h2>Customers collection</h2>
+<?php
+$customers = $block->customersData('all');
+foreach ($customers->getData() as $customer){
+    echo '<pre>';
+    var_dump($customer);
+    echo '</pre>';
+}
+?>
+<h2>Customers by first name</h2>
+<?php
+$customers = $block->customersData('name',"Laura Trevor");
+echo '<pre>';
+var_dump($customers->getData());
+echo '</pre>';
+?>
+<hr>
+<h2>All products raw</h2>
+<?php
+$block->getProductCollectionRaw();
+?>
+<h2>All products collection</h2>
+<?php
+$collection = $block->productsData('all');
+foreach ($collection->getData() as $product){
+    echo '<pre>';
+    var_dump($product);
+    echo '</pre>';
+}
+?>
+<h2>Products by id</h2>
+<?php
+$collection = $block->productsData('id', 12);
+foreach ($collection->getData() as $product){
+    echo '<pre>';
+    var_dump($product);
+    echo '</pre>';
+}
+?>
+<h2>Products by sku</h2>
+<?php
+$collection = $block->productsData('sku', "SB1222");
+foreach ($collection->getData() as $product){
+    echo '<pre>';
+    var_dump($product);
+    echo '</pre>';
+}
+?>
+<h2>Products by name</h2>
+<?php
+$collection = $block->productsData('name', "little");
+foreach ($collection->getData() as $product){
+    echo '<pre>';
+    var_dump($product);
+    echo '</pre>';
+}
+?>
+<h2>Products by price</h2>
+<?php
+$collection = $block->productsData('price', 10);
+foreach ($collection->getData() as $product){
+    echo '<pre>';
+    var_dump($product);
+    echo '</pre>';
+}
+?>
+
+>
